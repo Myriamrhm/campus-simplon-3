@@ -1,4 +1,4 @@
-
+@import "vars.scss";
 
 * {
   box-sizing: border-box;
@@ -7,36 +7,112 @@
 body {
     font-family: Avenir;
     margin: 0;
+    min-height: calc(100vh - 100px);
 }
 p {
     box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
     border-radius: .1rem;
-    max-width: 45vw;
     padding: 10px;
     text-align: justify;
 }
+label {
+  cursor: pointer;
+}
 p:empty {
     display: none;
+}
+body > .main {
+  padding: 20px 40px 200px;
+  top: $top-nav-height;
+  position: relative;
 }
 .title {
   color: dodgerblue;
   margin-top: 0;
 }
+.title.main {
+  background: white;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+  position: sticky;
+  top: $top-nav-height;
+  z-index: 8;
+  .icon {
+    cursor: pointer;
+    &:hover {
+      color: $color2;
+    }
+  }
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table thead {
+  background: $color3;
+}
+.table td, .table th {
+  border: 1px solid;
+  text-align: center;
+  background: transparent;
+  padding: 10px;
+}
+.table .cell.update, .table .cell.delete {
+  cursor: pointer;
+  transition: background .5s linear;
+}
+.table .cell.update:hover {
+  background: $success;
+}
+.table .cell.delete:hover {
+  background: $danger;
+}
+.table .cell.update:hover,
+.table .cell.delete:hover {
+  color: white;
+  border-color: black;
+}
+.table .link {
+  color: inherit;
+}
+.input.text {
+  height: 32px;
+  padding: 3px 0 3px 20px;
+  margin: 0 0 10px 0;
+  border-radius: .3rem;
+  border: 2px solid $lightgrey;
+}
 .btn {
   cursor: pointer;
-  border: 1px solid silver;
+  border: 1px solid $lightgrey;
   border-radius: .4rem;
   padding: 10px;
 }
 .btn:hover {
-  background: darkorange;
+  background: $color2;
   color: white;
 }
 .is-hidden {
   display: none;
 }
-#tp_node_connect_mysql {
 
+#footer_main {
+  align-items: center;
+  background: $lightgrey;
+  box-shadow: $shadow1;
+  bottom: 0;
+  color: white;
+  display: flex;
+  height: 50px;
+  justify-content: flex-end;
+  left: 40px;
+  padding: 0 20px;
+  position: fixed;
+  right: -40px;
+  width: calc(100% - 80px);
+}
+
+#tp_node_connect_mysql {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
@@ -78,7 +154,7 @@ p:empty {
   }
 
   #list_user .user:hover {
-      color: darkorange;
+      color: $color2;
   }
 
   #list_user .icon {
@@ -114,11 +190,9 @@ p:empty {
     grid-gap: 20px;
   }
 
-
   @media (max-width: 768px) {
     #todos {
       max-width: 100vw;
     }
   }
-
 }

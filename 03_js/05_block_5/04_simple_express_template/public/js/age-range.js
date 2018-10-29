@@ -1,0 +1,1 @@
+"use strict";var ageRange=function(){var e=document.getElementById("set_user_age"),t=document.getElementById("view_user_age");e.oninput=function(){t.innerText=this.value}};

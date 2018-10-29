@@ -1,0 +1,38 @@
+<table id="<%=id%>" class="table">
+  <thead>
+    <tr class="row">
+      <% for(let i = 0; i < parsable[0].length; i++) {%>
+        <th class="cell">
+          <span><%= parsable[0][i] %></span>
+        </th>
+      <% } %>
+      <th class="cell">
+        <span>edit</span>
+      </th>
+      <th class="cell">
+        <i class="fas fa-trash"></i>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for(let i = 0; i < parsable[1].length; i++) {%>
+    <tr class="row">
+        <% for(let prop in parsable[1][i]) {%>
+        <td class="cell">
+          <span><%= parsable[1][i][prop] || 'N.R' %></span>
+        </td>
+        <% } %>
+        <td class="cell update">
+          <a href="/<%= path %>/<%= parsable[1][i].id %>" class="link">
+            <i id="edit_user_<%= parsable[1][i].id %>" class="icon fas fa-edit"></i>
+          </a>
+        </td>
+        <td class="cell delete">
+          <a href="" class="link">
+            <i id="delete_user_<%= parsable[1][i].id %>" class="icon fas fa-minus"></i>
+          </a>
+        </td>
+    </tr>
+  <% } %>
+  </tbody>
+</table>

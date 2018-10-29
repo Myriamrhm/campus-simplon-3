@@ -40,15 +40,15 @@ const userModel = function userModel(connection) {
     var sql;
 
     if (id && !isNaN(id)) {
-      sql = "SELECT * FROM user WHERE id = ?";
+      sql = "SELECT user.id, name, lastname, email, age, c.country_name AS 'country name' FROM user LEFT JOIN country AS c ON user.id_country = c.id WHERE user.id = ?";
     } else {
-      sql = "SELECT * FROM user";
+      sql = "SELECT user.id, name, lastname, email, age, c.country_name AS 'country name' FROM user LEFT JOIN country AS c ON user.id_country = c.id";
     }
 
     connection.query(sql, [id], (error, results, fields) => {
-      // console.log(this.sql); // affiche la dernière requête SQL, pratique pour deboguer
+      // return console.log(this.sql);
       if (error) return clbk(error, null);
-      return clbk(null, results);
+      else return clbk(null, [fields.map(x => x.name), results]);
     });
   };
 

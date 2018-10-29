@@ -1,7 +1,16 @@
 <%- include partial/head.ejs %>
 
-<section id="user">
-  <h1 class="title">Manage Users</h1>
+<section id="user" class="main">
+  <h1 class="title main">
+    <span>Manage Users</span>
+    <i class="icon fas fa-plus-circle"></i>
+  </h1>
+  <%- include("widget/tabler", {
+      id: "tabler_user",
+      path: "user",
+      parsable: users
+    })
+  %>
   <h3 class="title">TP front</h3>
   <p>
     Coder un module de type tableur pour lister les users ( @view/partial/ ).<br>

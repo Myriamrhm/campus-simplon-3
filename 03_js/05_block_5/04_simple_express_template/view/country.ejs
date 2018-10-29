@@ -1,7 +1,17 @@
 <%- include partial/head.ejs %>
 
-<section id="country">
-  <h1 class="title"><%= title %></h1>
+<section id="country" class="main">
+
+  <h1 class="title main"><%= title %></h1>
+  <input type="text" oninput="tablerFilter(this, <%= countries[1] %>, 'name')">
+
+  <%- include("widget/tabler", {
+      id: "tabler_country",
+      path: "country",
+      parsable: countries
+    })
+  %>
+
   <h3 class="title">TP front</h3>
   <p>
     Arranger la navigation actuelle (#nav_main) puis,<br>

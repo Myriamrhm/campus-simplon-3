@@ -15,7 +15,7 @@ const userAPi = function userAPi(connection) {
 
   router.get('/user/:id', (req, res) => {
     userModel.get((err, dataset) => {
-      res.send(dataset[0]);
+      res.send(dataset[1]);
     }, req.params.id);
   });
 

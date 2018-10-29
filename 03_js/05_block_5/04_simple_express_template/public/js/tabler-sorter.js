@@ -1,0 +1,1 @@
+"use strict";var tablerSorter=function(r,t,n){r.sort(function(r){return r[t]===val})};

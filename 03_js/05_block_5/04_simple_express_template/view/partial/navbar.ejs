@@ -1,9 +1,9 @@
 <nav id="nav_main" >
   <ul class="list">
     <% for(let i = 0; i < site.nav.length; i++) {%>
-      <li class="item">
+      <li class="item <%= site.nav[i].route === site.activeRoute ? 'is-active' : '' %>">
         <a class="link" href="<%= site.nav[i].route %>">
-          <%= site.nav[i].label %>
+          <span class="text"><%= site.nav[i].label %></span>
         </a>
       </li>
     <% } %>
