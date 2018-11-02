@@ -8,7 +8,7 @@
 export default {
     data() {
         return {
-            test: (function getThis(params) {
+            test: (function getThis() {
                 return this;
             }())
         }

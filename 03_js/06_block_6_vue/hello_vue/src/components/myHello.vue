@@ -1,5 +1,5 @@
 <template>
-    <div class="my-hello" @click="action"> {{ msg || defaultMsg }}</div>
+    <div class="my-hello" @click="action"> {{msg || defaultMsg}}</div>
     <!-- ci-dessus interpolation de la var msg !!! -->
     <!-- Vue va chercher la valeur dans le composant @ this.data.msg-->
 </template>

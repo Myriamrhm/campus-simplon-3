@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         action(evt) {
-            // console.log("@parent => je suis trigger par event yo !", evt, this)
+            console.log("@parent => je suis trigger par event yo !", evt)
             // console.log("@$ebus ?", this.$ebus);
             this.$ebus.$emit("hello-je-pars-en-bus", {done: true});
         }

@@ -2,7 +2,10 @@
   <div class="home page">
     <tuto-v-model></tuto-v-model>
     <h1 class="title my-hello">Hello Vue ; )</h1>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <p>
+      terminal => vue inspect > config.js
+    </p>
+    <img alt="Vue logo" src="@/assets/logo.png">
     <my-hello :msg="['hello tout le monde']"></my-hello>
     <p>
       <b>Challenge1:</b><br>
@@ -33,20 +36,35 @@
         Utiliser une méthode pour ajouter le nouvel user à la liste d'users.
     </p>
     <hr>
-<div class="challenge">
-  <b>Challenge 4</b>:<br>
-  Créer un composant CustomMessage(msg, css)<br>
-  CustomMessage écoute ($on) le bus d'events ($ebus).<br>
-  CustomMessage affiche le message émis ($emit... msg) dans un élément portant une classe (css) parmi:
-  Importer CustomMessage dans App.<br>
-  <ul>
-    <li>success</li>
-    <li>warning</li>
-    <li>error</li>
-  </ul>
-  Utiliser customMessage pour afficher les messages relatifs à la création d'user (composant UserForm).<br>
-</div>
-<hr>
+    <div class="challenge">
+      <b>Challenge 4</b>:<br>
+      Créer un composant CustomMessage(msg, css)<br>
+      CustomMessage écoute ($on) le bus d'events ($ebus).<br>
+      CustomMessage affiche le message émis ($emit... msg) dans un élément portant une classe (css) parmi:
+      Importer CustomMessage dans App.<br>
+      <ul>
+        <li>success</li>
+        <li>warning</li>
+        <li>error</li>
+      </ul>
+      Utiliser customMessage pour afficher les messages relatifs à la création d'user (composant UserForm).<br>
+    </div>
+    <hr>
+    <div class="challenge">
+      <b>Challenge 5</b>:<br>
+      Créer un composant Tabler(data: {head, body})<br>
+      Tabler prend un objet data en props.<br>
+      data.head contient la liste de l'entête du tableur.<br>
+      data.body contient les données (le corps) du tableur.<br>
+      Tabler affiche la table html correspondant à data.body.<br>
+      Ce composant est réutilisable !!!<br>
+      Il vous servira à faciliter la construction de votre dashboard du projet.<br>
+      En option: sur demande, les th de l'entête contiennent des icônes pour trier les lignes du tableau. (par exemple par id...)<br>
+      A / Modifier le tableau d'users (ajouter un id chaque user) et le donner en prop d'un tableur.<br>
+      B / Si vous êtes en avance =><br>
+      Utiliser <b>axios</b> pour afficher les réponses d'un appel ajax sur opendata.paris sous la forme d'un tableur.<br>
+    </div>
+    <hr>
     <Cousin></Cousin>
   </div>
 </template>
