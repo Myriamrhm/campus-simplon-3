@@ -9,7 +9,7 @@ function filterFilesExt(dirPath, ext, clbk) {
         const tmp = data.filter(function(d) {
             return path.extname(d) === "." + ext;
         });
-        clbk(null, tmp);
+        return clbk(null, tmp);
     });
 }
 module.exports = filterFilesExt;

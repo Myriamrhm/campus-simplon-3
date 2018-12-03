@@ -13,4 +13,4 @@ function doAction(err, data) {
     }
 }
 
-myFilter.process(process.argv[2], process.argv[3], doAction);
+myFilter(process.argv[2], process.argv[3], doAction);
